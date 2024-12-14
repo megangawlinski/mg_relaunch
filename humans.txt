@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+Designer: Megan Gawlinski.
+Site: www.megan-gawlinski.de
+Email: info@megan-gawlinski.de
+Twitter: @megan_ashley143
+Location: Fuerth, GER
+
+# TECHNOLOGY COLOPHON
+
+Last update: 2014/04/21
+Standards: HTML5, CSS3, jQuery, Bootstrap
+Components: Modernizr
+Software: CodeKit, SASS, Brackets & OSX
