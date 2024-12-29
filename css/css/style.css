@@ -1,0 +1,39 @@
+body {
+  border: 1px solid green;
+  color: #2c2e34;
+  font-family: "Inter";
+}
+
+a {
+  color: #0f4947;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+  font-weight: normal;
+  font-style: normal;
+}
+.header-wrapper {
+  width: 1920px;
+  border: 1px solid black;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.header-wrapper .logo {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 30px 0;
+}
+.header-wrapper .logo .logo-text {
+  font-size: 75px;
+  text-transform: uppercase;
+}
+.header-wrapper .logo .logo-svg {
+  width: 225px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'typo';
+@import 'base';
+
+@include font-face(Inter, normal, normal);
+
+
+.header-wrapper {
+    width: 1920px;
+    border: 1px solid black;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+    .logo {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        text-transform: uppercase;
+        padding: 30px 0;
+        .logo-text {
+            font-size: $font-size-large;
+            text-transform: uppercase
+        }
+        .logo-svg {
+            width: 225px;
+        };
+    }
+   
+}
