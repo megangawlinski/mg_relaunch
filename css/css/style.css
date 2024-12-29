@@ -1,5 +1,4 @@
 body {
-  border: 1px solid green;
   color: #2c2e34;
   font-family: "Inter";
 }
@@ -17,7 +16,6 @@ a {
 }
 .header-wrapper {
   width: 1920px;
-  border: 1px solid black;
   display: flex;
   justify-self: center;
   justify-content: center;
