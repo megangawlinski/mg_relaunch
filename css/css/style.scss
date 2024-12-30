@@ -1,29 +1,80 @@
 @import 'variables';
 @import 'typo';
+@import 'mixins';
 @import 'base';
 
 @include font-face(Inter, normal, normal);
 
 
-.header-wrapper {
-    width: 1920px;
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    flex-direction: column;
-    .logo {
+.header {
+    padding: 0 15px;
+    &-wrapper {
+        max-width: 1920px;
+        width: 100%;
         display: flex;
-        gap: 30px;
+        justify-self: center;
         justify-content: center;
-        text-transform: uppercase;
-        padding: 30px 0;
-        .logo-text {
-            font-size: $font-size-large;
-            text-transform: uppercase
+        flex-direction: column;
+        .logo {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            text-transform: uppercase;
+            padding: 30px 0;
+            @media (max-width: 768px) {
+                gap: 15px;
+            }
+            .logo-text {
+                @include font-size(70, normal, normal);
+                text-transform: uppercase;
+    
+                @media (max-width: 768px) {
+                    @include font-size(35, normal, normal);
+                    text-align: right;
+                }
+            }
+            .logo-svg {
+                width: 200px;
+                @media (max-width: 768px) {
+                    width: 150px;
+                }
+            };
         }
-        .logo-svg {
-            width: 225px;
-        };
+        .navbar {
+            &-list {
+                display: flex;
+                justify-content: space-around;
+            
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 55px;
+                    background-color: $primary-color;
+                }
+                li {
+                    list-style-type: none;
+                    display: inline-block;
+                    z-index: 1;
+                    padding: 15px 30px;
+                    @media (max-width: 768px) {
+                        padding: 15px 20px;
+                    }
+                    a {
+                        color: $light-color;
+                        @include font-size(18, normal, normal);
+    
+                        @media (max-width: 768px) {
+                            @include font-size(16, normal, normal);
+                        }
+    
+                        &:hover {
+                            color: $secondary-color;
+                        }
+                    }
+                }
+            }
+        }
     }
-   
 }
