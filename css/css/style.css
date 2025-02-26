@@ -5,8 +5,15 @@
 
 body {
   color: #2c2e34;
-  font-family: "Inter";
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   margin: 0;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+p {
+  padding: 10px 0;
 }
 
 @media (min-width: 1200px) {
@@ -31,7 +38,7 @@ a {
 
 @font-face {
   font-family: "Inter";
-  src: url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+  src: url("fonts/inter/Inter-Italic-VariableFont_opsz, wght.ttf") format(ttf), url("Inter-VariableFont_opsz, wght.ttf") format(ttf);
   font-weight: normal;
   font-style: normal;
 }
@@ -39,7 +46,7 @@ a {
   padding: 0 15px;
 }
 .header-wrapper {
-  max-width: 1920px;
+  max-width: 1980px;
   width: 100%;
   display: flex;
   justify-self: center;
@@ -97,25 +104,231 @@ a {
   display: inline-block;
   z-index: 1;
   padding: 15px 30px;
-}
-@media (max-width: 768px) {
-  .header-wrapper .navbar-list li {
-    padding: 15px 20px;
-  }
-}
-.header-wrapper .navbar-list li a {
   color: #ffffff;
+  text-transform: uppercase;
   font-size: 18px;
   line-height: normal;
   letter-spacing: normal;
 }
 @media (max-width: 768px) {
-  .header-wrapper .navbar-list li a {
+  .header-wrapper .navbar-list li {
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+}
+@media (max-width: 768px) {
+  .header-wrapper .navbar-list li {
+    padding: 10px;
+  }
+}
+.header-wrapper .navbar-list li a {
+  color: #ffffff;
+}
+.header-wrapper .navbar-list li a:hover {
+  color: #0e8b86;
+}
+
+.container-main {
+  max-width: 1980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .container-main {
+    grid-template-columns: 12fr;
+  }
+  .container-main aside, .container-main main {
+    grid-column: span 1;
+  }
+}
+.container-main main {
+  padding: 50px;
+}
+@media (max-width: 768px) {
+  .container-main main {
+    padding: 50px 25px;
+  }
+}
+.container-main main.impressum, .container-main main .datenschutz {
+  min-height: 80vh;
+}
+@media (max-width: 768px) {
+  .container-main main.impressum, .container-main main .datenschutz {
+    min-height: 60vh;
+  }
+}
+.container-main main.impressum ul, .container-main main .datenschutz ul {
+  padding-left: 25px;
+}
+.container-main main h2 {
+  color: #0f4947;
+  font-size: 70px;
+  line-height: normal;
+  letter-spacing: normal;
+  padding-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .container-main main h2 {
+    font-size: 65px;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+}
+.container-main main h3 {
+  color: #0f4947;
+  text-transform: uppercase;
+  font-size: 35px;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 30px 0 15px;
+}
+.container-main main h4 {
+  color: #0f4947;
+  font-size: 25px;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 30px 0 0px;
+}
+.container-main main article {
+  padding: 0 0 50px 0;
+}
+@media (max-width: 768px) {
+  .container-main main article {
+    padding: 0 0 15px 0;
+  }
+}
+.container-main main article .date-info {
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2c2e34;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.container-main main article .clickable-block {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px 10px;
+  transition: background-color 0.3s;
+  color: #2c2e34;
+  border-bottom: 1px solid #2c2e34;
+}
+.container-main main article .clickable-block:last-child {
+  border: none;
+}
+@media (max-width: 768px) {
+  .container-main main article .clickable-block {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+.container-main main article .clickable-block:hover .read-more {
+  color: #0e8b86;
+  text-decoration: underline;
+}
+.container-main main article .clickable-block img {
+  width: 250px;
+  height: auto;
+  margin-right: 15px;
+}
+@media (max-width: 768px) {
+  .container-main main article .clickable-block img {
+    width: 100%;
+  }
+}
+.container-main main article .clickable-block div {
+  display: flex;
+  flex-direction: column;
+}
+.container-main main article .clickable-block .headline {
+  font-size: 25px;
+  line-height: normal;
+  letter-spacing: normal;
+  padding-bottom: 20px;
+}
+.container-main main article .clickable-block .description {
+  margin: 0 0 10px 0;
+}
+.container-main aside {
+  background-color: #0f4947;
+  color: #ffffff;
+  padding-bottom: 50px;
+}
+.container-main aside section img {
+  max-width: 100%;
+  height: auto;
+}
+.container-main aside section.info, .container-main aside section.language {
+  padding: 15px 30px;
+}
+.container-main aside section.info h2, .container-main aside section.language h2 {
+  font-size: 35px;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 15px 0;
+}
+.container-main aside section.info ul, .container-main aside section.language ul {
+  padding: 0px 15px 20px;
+}
+.container-main aside section.info ul li, .container-main aside section.language ul li {
+  list-style-type: disc;
+}
+.container-main aside section .lang-container {
+  display: flex;
+}
+.container-main aside section .lang-container .lang-info {
+  border-radius: 20px;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  color: #0f4947;
+  margin-right: 15px;
+}
+
+footer {
+  max-width: 1980px;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #ffffff;
+}
+footer .footer-wrapper {
+  background-color: #0f4947;
+}
+footer .footer-wrapper ul {
+  display: flex;
+  justify-content: space-around;
+}
+footer .footer-wrapper ul li {
+  list-style-type: none;
+  display: inline-block;
+  z-index: 1;
+  padding: 15px 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media (max-width: 768px) {
+  footer .footer-wrapper ul li {
     font-size: 16px;
     line-height: normal;
     letter-spacing: normal;
   }
 }
-.header-wrapper .navbar-list li a:hover {
+@media (max-width: 768px) {
+  footer .footer-wrapper ul li {
+    padding: 15px 20px;
+  }
+}
+footer .footer-wrapper ul li a {
+  color: #ffffff;
+}
+footer .footer-wrapper ul li a:hover {
   color: #0e8b86;
 }/*# sourceMappingURL=style.css.map */
