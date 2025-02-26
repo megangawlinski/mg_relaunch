@@ -9,7 +9,7 @@
 .header {
     padding: 0 15px;
     &-wrapper {
-        max-width: 1920px;
+        max-width: 1980px;
         width: 100%;
         display: flex;
         justify-self: center;
@@ -44,7 +44,7 @@
             &-list {
                 display: flex;
                 justify-content: space-around;
-            
+                
                 &:after {
                     content: "";
                     position: absolute;
@@ -58,17 +58,19 @@
                     display: inline-block;
                     z-index: 1;
                     padding: 15px 30px;
+                    color: $light-color;
+                    text-transform: uppercase;
+                    @include font-size(18, normal, normal);
+    
                     @media (max-width: 768px) {
-                        padding: 15px 20px;
+                        @include font-size(14, normal, normal);
+                    }
+                    
+                    @media (max-width: 768px) {
+                        padding: 10px;
                     }
                     a {
-                        color: $light-color;
-                        @include font-size(18, normal, normal);
-    
-                        @media (max-width: 768px) {
-                            @include font-size(16, normal, normal);
-                        }
-    
+                        color: $light-color;    
                         &:hover {
                             color: $secondary-color;
                         }
@@ -76,5 +78,181 @@
                 }
             }
         }
+    }
+}
+.container-main {
+    max-width: 1980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 10px;
+
+    @media (max-width: 767px) {
+        grid-template-columns: 12fr;
+        aside, main {
+            grid-column: span 1;
+        }
+    }
+    main {
+        padding: 50px;
+        @media (max-width: 768px) {
+            padding: 50px 25px;
+        }
+        &.impressum, .datenschutz {
+            min-height: 80vh;
+            @media (max-width: 768px) {
+                min-height: 60vh;
+            }
+            ul {
+                padding-left: 25px;
+            }
+        }
+        h2 {
+            color: $primary-color;
+            @include font-size(70, normal, normal);
+            padding-bottom: 30px;
+            @media (max-width: 768px) {
+                @include font-size(65, normal, normal);
+            }
+        }
+        h3 {
+            color: $primary-color;
+            text-transform: uppercase;
+            @include font-size(35, normal, normal);
+            padding: 30px 0 15px;
+        }
+        h4 {
+            color: $primary-color;
+            @include font-size(25, normal, normal);
+            padding: 30px 0 0px;
+        }
+        article {
+            padding: 0 0 50px 0;
+            @media (max-width: 768px) {
+                padding: 0 0 15px 0;
+            }
+            .date-info {
+                @include font-size(14, normal, normal);
+                color: $accent-color;
+                padding-bottom: 10px;
+                display: inline-block;
+            }
+            .clickable-block {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: inherit;
+                padding: 20px 10px;
+                transition: background-color 0.3s;
+                color: $accent-color;
+                border-bottom: 1px solid $accent-color;
+                &:last-child {
+                    border: none;
+                }
+                @media (max-width: 768px) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+                &:hover {
+                    .read-more {
+                        color: $secondary-color;
+                        text-decoration: underline;
+                    }
+                }
+                img {
+                    width: 250px;
+                    height: auto;
+                    margin-right: 15px;
+                    @media (max-width: 768px) {
+                        width: 100%;
+                    }
+                }
+                div {
+                    display: flex;
+                    flex-direction: column;
+                
+                }
+                .headline {
+                    @include font-size(25, normal, normal);
+                    padding-bottom: 20px;
+                }
+                .description {
+                    margin: 0 0 10px 0;
+                }
+                
+            }
+        }
+    }
+    aside {
+        background-color: $primary-color;
+        color: $light-color;
+        padding-bottom: 50px;
+        section {
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            &.info,
+            &.language {
+                padding: 15px 30px;
+                h2 {
+                    @include font-size(35, normal, normal);
+                    padding: 15px 0;
+                }
+                ul {
+                    padding: 0px 15px 20px;
+                    li {
+                        list-style-type: disc;
+                    }
+                }
+            }
+            .lang-container {
+                display: flex;
+                .lang-info {
+                    border-radius: 20px;
+                    padding: 15px 30px;
+                    background-color: $light-color;
+                    color: $primary-color;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+footer {
+    max-width: 1980px;
+    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid $light-color;
+    .footer-wrapper {
+        background-color: $primary-color;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            li {
+                list-style-type: none;
+                display: inline-block;
+                z-index: 1;
+                padding: 15px 30px;
+                color: $light-color;
+                text-transform: uppercase;
+                @include font-size(18, normal, normal);
+    
+                @media (max-width: 768px) {
+                    @include font-size(16, normal, normal);
+                }
+                
+                @media (max-width: 768px) {
+                    padding: 15px 20px;
+                }
+                a {
+                    color: $light-color;    
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        } 
     }
 }
